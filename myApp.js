@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-app.use(function() {
+app.use(function(req, res) {
   console.log(req.method + ' ' + req.path + ' ' + req.ip);
   next();
 });
