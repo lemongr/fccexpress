@@ -11,6 +11,11 @@ app.get("/json", function(req, res) {
 
 app.use('/public', express.static(__dirname + '/public'));
 
+app.use(function(req, res) {
+  console.log(req.method + ' ' + req.path + ' ' + req.ip);
+  next();
+});
+
 console.log('Hello World');
 
 
