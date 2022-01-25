@@ -7,7 +7,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + '/views/index.html');
@@ -31,11 +31,11 @@ app.get("/:word/echo", function(req, res) {
   res.json({echo: req.params.word});
 });
 
-app.route("name")
+app.route("/name")
     .get((req, res) => {
   res.json({name: req.query.first + ' ' + req.query.last});
 })
-    app.post("name", (req, res) => {
+    .post((req, res) => {
       res.json({name: req.body.first + ' ' + req.body.last});
     });
 console.log('Hello World');
