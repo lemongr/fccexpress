@@ -34,7 +34,7 @@ app.route("name")
     .get((req, res) => {
   res.json({name: req.query.first + ' ' + req.query.last});
 })
-    .post((req, res) => {
+    app.post("name", function(req, res) => {
       res.json({name: req.body.first + ' ' + req.body.last});
     });
 console.log('Hello World');
